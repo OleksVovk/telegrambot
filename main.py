@@ -1,8 +1,23 @@
 import telebot
 from telebot.types import Message
 
-token = 'TOKEN'
+token = '757968598:AAEV6NKHg8tUFqQUsstewK1DM_1nzdb0DzU'
 bot = telebot.TeleBot(token)
+
+
+@bot.message_handler(commands=['start'])
+def start_func(message):
+    bot.reply_to(message, 'Hello darkness my old friend')
+
+
+@bot.message_handler(commands=['sup'])
+def shell_func(message):
+    bot.reply_to(message, 'You shell not pass!')
+
+
+@bot.message_handler(commands=['news'])
+def shell_func(message):
+    bot.reply_to(message, 'NEWS NEWS NEWS NEWS!!!')
 
 
 @bot.message_handler(func=lambda message: True)
